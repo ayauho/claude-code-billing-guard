@@ -4,10 +4,10 @@ Watches whether Claude Code is billing your Pro/Max subscription or your
 pay-per-token API key, and warns you the instant it switches. Free, local,
 no telemetry, no network calls.
 
-(Note: settings and internal identifiers still use a `breaker.*` prefix —
-that's just the original internal name and carries no functional meaning;
-renaming those would mean touching working code right before publishing for
-no real benefit.)
+## Install
+
+In VS Code: Extensions view → search "Claude Code Billing Guard" → Install.
+Or from the Marketplace directly: https://marketplace.visualstudio.com/items?itemName=ayauho.claude-code-billing-guard
 
 ## Why this exists
 
@@ -25,7 +25,7 @@ This does.
   from confirmed access to every Claude Code version's actual on-disk
   schema. If status shows "Unknown" instead of a clear verdict, that's the
   tool correctly refusing to guess rather than a bug. Open the file at the
-  path in `breaker.credentialPath` (VS Code settings) yourself, check its
+  path in `claudeCodeBillingGuard.credentialPath` (VS Code settings) yourself, check its
   real field names, and set the override if needed.
 - **The environment-variable signal is the reliable one.** If
   `ANTHROPIC_API_KEY` or `ANTHROPIC_AUTH_TOKEN` is set anywhere in the
@@ -39,7 +39,10 @@ This does.
   syntax can change between versions; this tool isn't going to guess and
   execute on your behalf.
 
-## Running it locally (not yet published to the Marketplace)
+## Building from source (for development)
+
+Most people don't need this — use Install above instead. This is only for
+modifying the code yourself.
 
 ```bash
 cd claude-code-billing-guard
@@ -58,8 +61,8 @@ Then either:
 
 | Setting | Default | What it does |
 |---|---|---|
-| `breaker.credentialPath` | `""` (auto-detect) | Override the path to Claude Code's local credential file if auto-detection doesn't find it on your machine. |
-| `breaker.pollIntervalMs` | `15000` | How often to re-check, in milliseconds. |
+| `claudeCodeBillingGuard.credentialPath` | `""` (auto-detect) | Override the path to Claude Code's local credential file if auto-detection doesn't find it on your machine. |
+| `claudeCodeBillingGuard.pollIntervalMs` | `15000` | How often to re-check, in milliseconds. |
 
 ## What this is not
 
