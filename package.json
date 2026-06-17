@@ -3,7 +3,7 @@
   "displayName": "Breaker — Claude Code Billing Guard",
   "description": "Watches whether Claude Code is billing your subscription or your API key, and warns the instant it switches.",
   "version": "0.1.0",
-  "publisher": "ad28d923-9ae0-62db-9840-80da8661e746",
+  "publisher": "ayauho",
   "license": "MIT",
   "repository": {
     "type": "git",
