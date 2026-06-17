@@ -1,13 +1,13 @@
 {
-  "name": "breaker",
-  "displayName": "Breaker — Claude Code Billing Guard",
+  "name": "claude-code-billing-guard",
+  "displayName": "Claude Code Billing Guard",
   "description": "Watches whether Claude Code is billing your subscription or your API key, and warns the instant it switches.",
   "version": "0.1.0",
   "publisher": "ayauho",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ayauho/breaker.git"
+    "url": "https://github.com/ayauho/claude-code-billing-guard.git"
   },
   "engines": {
     "vscode": "^1.85.0"

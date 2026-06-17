@@ -1,8 +1,13 @@
-# Breaker 0.1 — Claude Code Billing Guard
+# Claude Code Billing Guard 0.1
 
 Watches whether Claude Code is billing your Pro/Max subscription or your
 pay-per-token API key, and warns you the instant it switches. Free, local,
 no telemetry, no network calls.
+
+(Note: settings and internal identifiers still use a `breaker.*` prefix —
+that's just the original internal name and carries no functional meaning;
+renaming those would mean touching working code right before publishing for
+no real benefit.)
 
 ## Why this exists
 
@@ -37,16 +42,17 @@ This does.
 ## Running it locally (not yet published to the Marketplace)
 
 ```bash
-cd breaker
+cd claude-code-billing-guard
 npm install -g @vscode/vsce   # one-time, if you don't have it
 ```
 
 Then either:
 
 - **Quick test:** open this folder in VS Code, press `F5` to launch an
-  Extension Development Host window. Breaker will activate there.
-- **Install as a real extension:** `vsce package` to produce `breaker-0.1.0.vsix`,
-  then in VS Code: Extensions view → `...` menu → "Install from VSIX...".
+  Extension Development Host window. It will activate there.
+- **Install as a real extension:** `vsce package` to produce
+  `claude-code-billing-guard-0.1.0.vsix`, then in VS Code: Extensions view →
+  `...` menu → "Install from VSIX...".
 
 ## Settings
 
