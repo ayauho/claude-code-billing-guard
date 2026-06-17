@@ -2,7 +2,7 @@
   "name": "claude-code-billing-guard",
   "displayName": "Claude Code Billing Guard",
   "description": "Watches whether Claude Code is billing your subscription or your API key, and warns the instant it switches.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "ayauho",
   "license": "MIT",
   "repository": {
@@ -19,23 +19,23 @@
   "contributes": {
     "commands": [
       {
-        "command": "breaker.showStatus",
-        "title": "Breaker: Show Billing Status"
+        "command": "claudeCodeBillingGuard.showStatus",
+        "title": "Claude Code Billing Guard: Show Billing Status"
       },
       {
-        "command": "breaker.restoreSubscription",
-        "title": "Breaker: Restore Subscription Billing Mode"
+        "command": "claudeCodeBillingGuard.restoreSubscription",
+        "title": "Claude Code Billing Guard: Restore Subscription Billing Mode"
       }
     ],
     "configuration": {
-      "title": "Breaker",
+      "title": "Claude Code Billing Guard",
       "properties": {
-        "breaker.credentialPath": {
+        "claudeCodeBillingGuard.credentialPath": {
           "type": "string",
           "default": "",
           "description": "Override path to Claude Code's local credential/state file. Leave blank to auto-detect common locations. If detection isn't working for your install, find the real path and paste it here."
         },
-        "breaker.pollIntervalMs": {
+        "claudeCodeBillingGuard.pollIntervalMs": {
           "type": "number",
           "default": 15000,
           "minimum": 3000,
