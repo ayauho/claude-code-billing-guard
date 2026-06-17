@@ -1,0 +1,53 @@
+{
+  "name": "breaker",
+  "displayName": "Breaker — Claude Code Billing Guard",
+  "description": "Watches whether Claude Code is billing your subscription or your API key, and warns the instant it switches.",
+  "version": "0.1.0",
+  "publisher": "ad28d923-9ae0-62db-9840-80da8661e746",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ayauho/breaker.git"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other"],
+  "keywords": ["claude", "claude code", "anthropic", "billing", "cost guard"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "breaker.showStatus",
+        "title": "Breaker: Show Billing Status"
+      },
+      {
+        "command": "breaker.restoreSubscription",
+        "title": "Breaker: Restore Subscription Billing Mode"
+      }
+    ],
+    "configuration": {
+      "title": "Breaker",
+      "properties": {
+        "breaker.credentialPath": {
+          "type": "string",
+          "default": "",
+          "description": "Override path to Claude Code's local credential/state file. Leave blank to auto-detect common locations. If detection isn't working for your install, find the real path and paste it here."
+        },
+        "breaker.pollIntervalMs": {
+          "type": "number",
+          "default": 15000,
+          "minimum": 3000,
+          "description": "How often to re-check billing mode, in milliseconds."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^2.24.0"
+  }
+}
