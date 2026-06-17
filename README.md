@@ -37,7 +37,7 @@ This does.
 ## Running it locally (not yet published to the Marketplace)
 
 ```bash
-cd breaker-extension
+cd breaker
 npm install -g @vscode/vsce   # one-time, if you don't have it
 ```
 
